@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		A05FFB1A2B765B690094DAAF /* LinkBucketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFB192B765B690094DAAF /* LinkBucketApp.swift */; };
-		A05FFB1C2B765B690094DAAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFB1B2B765B690094DAAF /* ContentView.swift */; };
+		A05FFB1C2B765B690094DAAF /* SavedLinksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFB1B2B765B690094DAAF /* SavedLinksScreen.swift */; };
 		A05FFB1E2B765B6B0094DAAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05FFB1D2B765B6B0094DAAF /* Assets.xcassets */; };
 		A05FFB212B765B6B0094DAAF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05FFB202B765B6B0094DAAF /* Preview Assets.xcassets */; };
+		A0CC12832B765DA1000F605F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC12822B765DA1000F605F /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A05FFB162B765B690094DAAF /* LinkBucket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkBucket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05FFB192B765B690094DAAF /* LinkBucketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkBucketApp.swift; sourceTree = "<group>"; };
-		A05FFB1B2B765B690094DAAF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A05FFB1B2B765B690094DAAF /* SavedLinksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLinksScreen.swift; sourceTree = "<group>"; };
 		A05FFB1D2B765B6B0094DAAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A05FFB202B765B6B0094DAAF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A0CC12822B765DA1000F605F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				A05FFB192B765B690094DAAF /* LinkBucketApp.swift */,
-				A05FFB1B2B765B690094DAAF /* ContentView.swift */,
+				A0CC12802B765D83000F605F /* Utilities */,
+				A0CC127E2B765D4B000F605F /* View */,
 				A05FFB1D2B765B6B0094DAAF /* Assets.xcassets */,
 				A05FFB1F2B765B6B0094DAAF /* Preview Content */,
 			);
@@ -65,6 +68,46 @@
 				A05FFB202B765B6B0094DAAF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A0CC127D2B765D3A000F605F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A05FFB1B2B765B690094DAAF /* SavedLinksScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A0CC127E2B765D4B000F605F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0CC127F2B765D78000F605F /* Views */,
+				A0CC127D2B765D3A000F605F /* Screens */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A0CC127F2B765D78000F605F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0CC12802B765D83000F605F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A0CC12812B765D95000F605F /* Managers */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A0CC12812B765D95000F605F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A0CC12822B765DA1000F605F /* NetworkManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +180,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A05FFB1C2B765B690094DAAF /* ContentView.swift in Sources */,
+				A0CC12832B765DA1000F605F /* NetworkManager.swift in Sources */,
+				A05FFB1C2B765B690094DAAF /* SavedLinksScreen.swift in Sources */,
 				A05FFB1A2B765B690094DAAF /* LinkBucketApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

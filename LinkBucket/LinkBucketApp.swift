@@ -11,7 +11,7 @@ import SwiftUI
 struct LinkBucketApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SavedLinksScreen()
         }
     }
 }
