@@ -40,11 +40,13 @@ struct SavedLinksScreen: View {
                 .clipShape(.capsule)
                 .overlay(
                     Capsule().stroke(Color.secondary)
+                        .opacity(0.5)
                 )
                 .padding(.trailing)
                 .safeAreaPadding(.bottom)
             }
             .padding(.leading)
+            .scrollDismissesKeyboard(.interactively)
             .navigationTitle("Saved Links")
         }
     }
