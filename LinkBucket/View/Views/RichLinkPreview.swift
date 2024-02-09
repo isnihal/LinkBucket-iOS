@@ -11,15 +11,19 @@ import LinkPresentation
 
 struct RichLinkPreview: View {
     let url: String
-    private let metadataProvider = MetadataProvider()
+    @StateObject private var metadataProvider = MetadataProvider()
     
     var body: some View {
         if metadataProvider.metadata == nil{
             ProgressView()
+                .task {
+                    metadataProvider.fetchMetadata(of: url)
+                }
         }
         else{
             if let metadata = metadataProvider.metadata{
                 LinkPreviewRepresentable(metadata: metadata)
+                    .fixedSize()
             }
             else{
                 //TODO: ERROR VIEW
