@@ -18,6 +18,7 @@ struct SavedLinksScreen: View {
                 List {
                     ForEach(urls, id: \.self) { element in
                         RichLinkPreview(url: element)
+                            .padding(.bottom)
                             .listRowSeparator(.hidden)
                             .listRowInsets(EdgeInsets())
                     }
