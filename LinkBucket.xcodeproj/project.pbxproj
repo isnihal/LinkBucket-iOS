@@ -60,8 +60,8 @@
 			children = (
 				A0CC12892B7665A7000F605F /* Info.plist */,
 				A05FFB192B765B690094DAAF /* LinkBucketApp.swift */,
-				A0CC12802B765D83000F605F /* Utilities */,
 				A0CC127E2B765D4B000F605F /* View */,
+				A0CC12802B765D83000F605F /* Utilities */,
 				A05FFB1D2B765B6B0094DAAF /* Assets.xcassets */,
 				A05FFB1F2B765B6B0094DAAF /* Preview Content */,
 			);

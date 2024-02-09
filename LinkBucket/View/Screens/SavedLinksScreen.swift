@@ -9,24 +9,31 @@ import SwiftUI
 
 struct SavedLinksScreen: View {
     @State var url: String
+    
+    @State var urls: [String] = []
      
     var body: some View {
         NavigationStack {
             VStack{
-                ScrollView{
-                    VStack(alignment: .leading){
-                        HStack{
-                            Spacer()
-                        }
-                        RichLinkPreview(url: "https://youtube.com/shorts/fofT4SJ4LRQ?si=6jIEZfi3aJeM7bsh")
+                List {
+                    ForEach(urls, id: \.self) { element in
+                        RichLinkPreview(url: element)
+                            .listRowSeparator(.hidden)
+                            .listRowInsets(EdgeInsets())
                     }
+                    .onDelete(perform: { indexSet in
+                        urls.remove(atOffsets: indexSet)
+                    })
                 }
+                .listStyle(.plain)
                 HStack{
                     TextField("Paste your link here", text: $url)
                         .keyboardType(.URL)
                     Spacer()
                     Button(action: {
-                        print("Hello")
+                        urls.append(url)
+                        url = ""
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                     }, label: {
                         Image(systemName: "arrow.up.circle.fill")
                             .imageScale(.large)
