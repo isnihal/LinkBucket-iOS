@@ -8,15 +8,41 @@
 import SwiftUI
 
 struct SavedLinksScreen: View {
+    @State var url: String
+     
     var body: some View {
         NavigationStack {
-            ScrollView{
-                VStack(alignment: .leading){
-                    HStack{
-                        Spacer()
+            VStack{
+                ScrollView{
+                    VStack(alignment: .leading){
+                        HStack{
+                            Spacer()
+                        }
+                        RichLinkPreview(url: "https://youtube.com/shorts/fofT4SJ4LRQ?si=6jIEZfi3aJeM7bsh")
                     }
-                    RichLinkPreview(url: "https://youtube.com/shorts/fofT4SJ4LRQ?si=6jIEZfi3aJeM7bsh")
                 }
+                HStack{
+                    TextField("Paste your link here", text: $url)
+                        .keyboardType(.URL)
+                    Spacer()
+                    Button(action: {
+                        print("Hello")
+                    }, label: {
+                        Image(systemName: "arrow.up.circle.fill")
+                            .imageScale(.large)
+                            .foregroundStyle(.blue)
+                    })
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal)
+                .padding(.vertical,4)
+                .background()
+                .clipShape(.capsule)
+                .overlay(
+                    Capsule().stroke(Color.secondary)
+                )
+                .padding(.trailing)
+                .safeAreaPadding(.bottom)
             }
             .padding(.leading)
             .navigationTitle("Saved Links")
@@ -25,5 +51,5 @@ struct SavedLinksScreen: View {
 }
 
 #Preview {
-    SavedLinksScreen()
+    SavedLinksScreen(url: "")
 }
