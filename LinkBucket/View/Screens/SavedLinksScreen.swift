@@ -15,6 +15,19 @@ struct SavedLinksScreen: View {
     
     @Environment(\.modelContext) var context
     
+    @FocusState private var isFocused: Bool
+    
+    func saveLink(){
+        if let url = URL(string: inputValue), url.host != nil{
+            let link = Link(url: inputValue)
+            context.insert(link)
+        }else{
+            //TODO: HANDLE INVALID URL
+        }
+        inputValue = ""
+        isFocused = false
+    }
+    
     var body: some View {
         NavigationStack {
             VStack{
@@ -36,14 +49,14 @@ struct SavedLinksScreen: View {
                 .listStyle(.plain)
                 HStack{
                     TextField("Paste your link here", text: $inputValue)
+                        .focused($isFocused)
                         .keyboardType(.URL)
+                        .onSubmit{
+                            saveLink()
+                        }
                     Spacer()
                     Button(action: {
-                        let link = Link(url: inputValue)
-                        context.insert(link)
-                       //TODO: SHORTEN THIS FUNCTION
-                        inputValue = ""
-//                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                       saveLink()
                     }, label: {
                         Image(systemName: "arrow.up.circle.fill")
                             .imageScale(.large)
