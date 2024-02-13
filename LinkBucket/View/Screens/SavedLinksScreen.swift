@@ -6,24 +6,29 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SavedLinksScreen: View {
     @State var url: String
     
-    @State var urls: [String] = []
-     
+    @Query(sort: \Link.url) var urls: [Link]
+    
+    @Environment(\.modelContext) var context
+    
     var body: some View {
         NavigationStack {
             VStack{
                 List {
                     ForEach(urls, id: \.self) { element in
-                        RichLinkPreview(url: element)
+                        RichLinkPreview(url: url)
                             .padding(.bottom)
                             .listRowSeparator(.hidden)
                             .listRowInsets(EdgeInsets())
                     }
                     .onDelete(perform: { indexSet in
-                        urls.remove(atOffsets: indexSet)
+                        for index in indexSet{
+                            context.delete(urls[index])
+                        }
                     })
                 }
                 .listStyle(.plain)
@@ -32,7 +37,9 @@ struct SavedLinksScreen: View {
                         .keyboardType(.URL)
                     Spacer()
                     Button(action: {
-                        urls.append(url)
+                        let link = Link(url: url)
+                        context.insert(link)
+                       //TODO: SHORTEN THIS FUNCTION
                         url = ""
                         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                     }, label: {
