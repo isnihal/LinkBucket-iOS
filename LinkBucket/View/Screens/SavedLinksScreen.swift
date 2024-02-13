@@ -35,7 +35,6 @@ struct SavedLinksScreen: View {
                     ForEach(urls, id: \.self) { element in
                         if let url = element.url{
                             RichLinkPreview(url: url)
-                                .padding(.bottom)
                                 .listRowSeparator(.hidden)
                                 .listRowInsets(EdgeInsets())
                         }
@@ -47,6 +46,7 @@ struct SavedLinksScreen: View {
                     })
                 }
                 .listStyle(.plain)
+                .listRowSpacing(16)
                 HStack{
                     TextField("Paste your link here", text: $inputValue)
                         .focused($isFocused)
