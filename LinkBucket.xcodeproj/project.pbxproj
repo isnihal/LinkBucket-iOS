@@ -11,6 +11,7 @@
 		A05FFB1C2B765B690094DAAF /* SavedLinksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFB1B2B765B690094DAAF /* SavedLinksScreen.swift */; };
 		A05FFB1E2B765B6B0094DAAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05FFB1D2B765B6B0094DAAF /* Assets.xcassets */; };
 		A05FFB212B765B6B0094DAAF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05FFB202B765B6B0094DAAF /* Preview Assets.xcassets */; };
+		A07F30D32B7B7620006FC9BF /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07F30D22B7B7620006FC9BF /* Link.swift */; };
 		A0CC12832B765DA1000F605F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC12822B765DA1000F605F /* NetworkManager.swift */; };
 		A0CC12852B765FAF000F605F /* RichLinkPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC12842B765FAF000F605F /* RichLinkPreview.swift */; };
 		A0CC12882B765FCF000F605F /* LinkPreviewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC12872B765FCF000F605F /* LinkPreviewRepresentable.swift */; };
@@ -22,6 +23,7 @@
 		A05FFB1B2B765B690094DAAF /* SavedLinksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLinksScreen.swift; sourceTree = "<group>"; };
 		A05FFB1D2B765B6B0094DAAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A05FFB202B765B6B0094DAAF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A07F30D22B7B7620006FC9BF /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		A0CC12822B765DA1000F605F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A0CC12842B765FAF000F605F /* RichLinkPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichLinkPreview.swift; sourceTree = "<group>"; };
 		A0CC12872B765FCF000F605F /* LinkPreviewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPreviewRepresentable.swift; sourceTree = "<group>"; };
@@ -58,8 +60,9 @@
 		A05FFB182B765B690094DAAF /* LinkBucket */ = {
 			isa = PBXGroup;
 			children = (
-				A0CC12892B7665A7000F605F /* Info.plist */,
 				A05FFB192B765B690094DAAF /* LinkBucketApp.swift */,
+				A07F30D12B7B75FE006FC9BF /* Models */,
+				A0CC12892B7665A7000F605F /* Info.plist */,
 				A0CC127E2B765D4B000F605F /* View */,
 				A0CC12802B765D83000F605F /* Utilities */,
 				A05FFB1D2B765B6B0094DAAF /* Assets.xcassets */,
@@ -74,6 +77,14 @@
 				A05FFB202B765B6B0094DAAF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A07F30D12B7B75FE006FC9BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A07F30D22B7B7620006FC9BF /* Link.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A0CC127D2B765D3A000F605F /* Screens */ = {
@@ -199,6 +210,7 @@
 				A0CC12832B765DA1000F605F /* NetworkManager.swift in Sources */,
 				A0CC12882B765FCF000F605F /* LinkPreviewRepresentable.swift in Sources */,
 				A05FFB1C2B765B690094DAAF /* SavedLinksScreen.swift in Sources */,
+				A07F30D32B7B7620006FC9BF /* Link.swift in Sources */,
 				A0CC12852B765FAF000F605F /* RichLinkPreview.swift in Sources */,
 				A05FFB1A2B765B690094DAAF /* LinkBucketApp.swift in Sources */,
 			);
