@@ -10,7 +10,9 @@ import SwiftData
 
 @Model
 class Link{
-    let url: String? = ""
+    let url: String?
     
-    init() {}
+    init(url: String?) {
+        self.url = url
+    }
 }

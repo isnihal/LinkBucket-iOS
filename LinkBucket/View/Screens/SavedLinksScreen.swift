@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct SavedLinksScreen: View {
-    @State var url: String
+    @State var inputValue: String
     
     @Query(sort: \Link.url) var urls: [Link]
     
@@ -20,10 +20,12 @@ struct SavedLinksScreen: View {
             VStack{
                 List {
                     ForEach(urls, id: \.self) { element in
-                        RichLinkPreview(url: url)
-                            .padding(.bottom)
-                            .listRowSeparator(.hidden)
-                            .listRowInsets(EdgeInsets())
+                        if let url = element.url{
+                            RichLinkPreview(url: url)
+                                .padding(.bottom)
+                                .listRowSeparator(.hidden)
+                                .listRowInsets(EdgeInsets())
+                        }
                     }
                     .onDelete(perform: { indexSet in
                         for index in indexSet{
@@ -33,15 +35,15 @@ struct SavedLinksScreen: View {
                 }
                 .listStyle(.plain)
                 HStack{
-                    TextField("Paste your link here", text: $url)
+                    TextField("Paste your link here", text: $inputValue)
                         .keyboardType(.URL)
                     Spacer()
                     Button(action: {
-                        let link = Link(url: url)
+                        let link = Link(url: inputValue)
                         context.insert(link)
                        //TODO: SHORTEN THIS FUNCTION
-                        url = ""
-                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                        inputValue = ""
+//                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                     }, label: {
                         Image(systemName: "arrow.up.circle.fill")
                             .imageScale(.large)
@@ -68,5 +70,5 @@ struct SavedLinksScreen: View {
 }
 
 #Preview {
-    SavedLinksScreen(url: "")
+    SavedLinksScreen(inputValue: "")
 }

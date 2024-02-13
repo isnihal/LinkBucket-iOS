@@ -24,7 +24,7 @@ struct LinkBucketApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SavedLinksScreen(url: "")
+            SavedLinksScreen(inputValue: "")
                 .modelContainer(modelContainer)
         }
     }
