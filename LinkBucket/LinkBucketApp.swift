@@ -6,12 +6,26 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct LinkBucketApp: App {
+    
+    let modelContainer: ModelContainer
+    
+    init() {
+        do{
+            modelContainer = try ModelContainer(for: Link.self)
+        }
+        catch{
+            fatalError("Error initializing model container: \(error)")
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
             SavedLinksScreen(url: "")
+                .modelContainer(modelContainer)
         }
     }
 }
