@@ -11,7 +11,7 @@ import SwiftData
 struct SavedLinksScreen: View {
     @State var inputValue: String
     
-    @Query(sort: \Link.url) var urls: [Link]
+    @Query(sort: \Link.timestamp, order: .reverse) var urls: [Link]
     
     @Environment(\.modelContext) var context
     
