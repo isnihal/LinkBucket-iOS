@@ -15,6 +15,8 @@
 		A0CC12832B765DA1000F605F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC12822B765DA1000F605F /* NetworkManager.swift */; };
 		A0CC12852B765FAF000F605F /* RichLinkPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC12842B765FAF000F605F /* RichLinkPreview.swift */; };
 		A0CC12882B765FCF000F605F /* LinkPreviewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC12872B765FCF000F605F /* LinkPreviewRepresentable.swift */; };
+		A0D3C0AE2B7C82C400FF8E6D /* FoldersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C0AD2B7C82C400FF8E6D /* FoldersScreen.swift */; };
+		A0D3C0B02B7C838E00FF8E6D /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C0AF2B7C838E00FF8E6D /* FolderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		A0CC12842B765FAF000F605F /* RichLinkPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichLinkPreview.swift; sourceTree = "<group>"; };
 		A0CC12872B765FCF000F605F /* LinkPreviewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPreviewRepresentable.swift; sourceTree = "<group>"; };
 		A0CC12892B7665A7000F605F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A0D3C0AD2B7C82C400FF8E6D /* FoldersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersScreen.swift; sourceTree = "<group>"; };
+		A0D3C0AF2B7C838E00FF8E6D /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +68,10 @@
 				A07F30D42B7B9483006FC9BF /* LinkBucket.entitlements */,
 				A05FFB192B765B690094DAAF /* LinkBucketApp.swift */,
 				A07F30D12B7B75FE006FC9BF /* Models */,
-				A0CC12892B7665A7000F605F /* Info.plist */,
 				A0CC127E2B765D4B000F605F /* View */,
 				A0CC12802B765D83000F605F /* Utilities */,
 				A05FFB1D2B765B6B0094DAAF /* Assets.xcassets */,
+				A0CC12892B7665A7000F605F /* Info.plist */,
 				A05FFB1F2B765B6B0094DAAF /* Preview Content */,
 			);
 			path = LinkBucket;
@@ -93,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				A05FFB1B2B765B690094DAAF /* SavedLinksScreen.swift */,
+				A0D3C0AD2B7C82C400FF8E6D /* FoldersScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A0CC12842B765FAF000F605F /* RichLinkPreview.swift */,
+				A0D3C0AF2B7C838E00FF8E6D /* FolderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,8 +218,10 @@
 				A0CC12832B765DA1000F605F /* NetworkManager.swift in Sources */,
 				A0CC12882B765FCF000F605F /* LinkPreviewRepresentable.swift in Sources */,
 				A05FFB1C2B765B690094DAAF /* SavedLinksScreen.swift in Sources */,
+				A0D3C0B02B7C838E00FF8E6D /* FolderView.swift in Sources */,
 				A07F30D32B7B7620006FC9BF /* Link.swift in Sources */,
 				A0CC12852B765FAF000F605F /* RichLinkPreview.swift in Sources */,
+				A0D3C0AE2B7C82C400FF8E6D /* FoldersScreen.swift in Sources */,
 				A05FFB1A2B765B690094DAAF /* LinkBucketApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
