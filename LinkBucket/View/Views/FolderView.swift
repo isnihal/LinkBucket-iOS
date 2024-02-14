@@ -13,7 +13,7 @@ struct FolderView: View {
     var body: some View {
         VStack{
             NavigationLink {
-                SavedLinksScreen(selectedFolder: folder)
+                LinksScreen(selectedFolder: folder)
             } label: {
                 Image(systemName: "folder.fill")
                     .resizable()
