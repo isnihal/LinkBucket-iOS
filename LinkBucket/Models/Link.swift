@@ -11,9 +11,11 @@ import SwiftData
 @Model
 class Link{
     var url: String = ""
+    var folder: Folder?
     var timestamp: Date = Date()
     
-    init(url: String) {
+    init(url: String, folder: Folder) {
         self.url = url
+        self.folder = folder
     }
 }

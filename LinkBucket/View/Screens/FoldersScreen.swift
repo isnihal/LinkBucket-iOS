@@ -6,19 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FoldersScreen: View {
+    @Query(sort: \Folder.title) var folders: [Folder]
+    
     var body: some View {
         NavigationStack{
             VStack{
                 LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())], content: {
-                    FolderView()
-                    FolderView()
+                    FolderView(folder: .savedLinks)
+                    FolderView(folder: Folder(title: "Hello", links: []))
                 })
                 Spacer()
             }
             .padding()
-            .navigationTitle("Folders")
+            .navigationTitle("Your Buckets")
         }
     }
 }

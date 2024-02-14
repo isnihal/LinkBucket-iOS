@@ -15,7 +15,7 @@ struct LinkBucketApp: App {
     
     init() {
         do{
-            modelContainer = try ModelContainer(for: Link.self)
+            modelContainer = try ModelContainer(for: Folder.self)
         }
         catch{
             fatalError("Error initializing model container: \(error)")
@@ -24,7 +24,7 @@ struct LinkBucketApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SavedLinksScreen(inputValue: "")
+            FoldersScreen()
                 .modelContainer(modelContainer)
         }
     }

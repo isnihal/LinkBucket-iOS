@@ -9,9 +9,22 @@ import SwiftUI
 import SwiftData
 
 struct SavedLinksScreen: View {
-    @State var inputValue: String
-    
+    @State var inputValue: String = ""
     @Query(sort: \Link.timestamp, order: .reverse) var urls: [Link]
+    var selectedFolder: Folder
+
+    
+    init(selectedFolder: Folder){
+        self.selectedFolder = selectedFolder
+        let type = selectedFolder.title
+
+            let filter = #Predicate<Link> { link in
+                link.folder?.title == type
+            }
+        _urls = Query(filter: filter,sort: \Link.timestamp, order: .reverse)
+        }
+    
+    
     
     @Environment(\.modelContext) var context
     
@@ -19,7 +32,7 @@ struct SavedLinksScreen: View {
     
     func saveLink(){
         if let url = URL(string: inputValue), url.host != nil{
-            let link = Link(url: inputValue)
+            let link = Link(url: inputValue, folder: selectedFolder)
             context.insert(link)
         }else{
             //TODO: HANDLE INVALID URL
@@ -75,11 +88,11 @@ struct SavedLinksScreen: View {
             }
             .padding(.leading)
             .scrollDismissesKeyboard(.interactively)
-            .navigationTitle("Saved Links")
+            .navigationTitle(selectedFolder.title)
         }
     }
 }
 
 #Preview {
-    SavedLinksScreen(inputValue: "")
+    SavedLinksScreen(selectedFolder: .mockFolder)
 }

@@ -8,21 +8,25 @@
 import SwiftUI
 
 struct FolderView: View {
+    var folder: Folder
+    
     var body: some View {
         VStack{
-            Button(action: {}, label: {
+            NavigationLink {
+                SavedLinksScreen(selectedFolder: folder)
+            } label: {
                 Image(systemName: "folder.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: 100)
                     .foregroundStyle(.folder)
-            })
-            Text("Folder Name")
+            }
+            Text(folder.title)
                 .font(.title3)
         }
     }
 }
 
 #Preview {
-    FolderView()
+    FolderView(folder: .mockFolder)
 }
