@@ -10,8 +10,8 @@ import SwiftData
 
 @Model
 class Link{
-    let url: String = ""
-    let timestamp: Date = Date()
+    var url: String = ""
+    var timestamp: Date = Date()
     
     init(url: String) {
         self.url = url
