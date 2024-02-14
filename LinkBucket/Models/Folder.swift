@@ -10,6 +10,7 @@ import SwiftData
 
 @Model
 class Folder{
+    var bucketId = UUID()
     var title: String = ""
     @Relationship(deleteRule: .cascade, inverse: \Link.folder)
     var links: [Link] = []

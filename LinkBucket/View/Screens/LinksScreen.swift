@@ -18,9 +18,9 @@ struct LinksScreen: View {
     
     init(selectedFolder: Folder){
         self.selectedFolder = selectedFolder
-        let selectedFolderTitle = selectedFolder.title
+        let selectedBucketId = selectedFolder.bucketId
         
-        let filter = #Predicate<Link> { $0.folder?.title == selectedFolderTitle
+        let filter = #Predicate<Link> { $0.folder?.bucketId == selectedBucketId
         }
         
         _urls = Query(filter: filter,sort: \Link.timestamp, order: .reverse)
