@@ -13,6 +13,7 @@ class Folder{
     var title: String = ""
     @Relationship(deleteRule: .cascade, inverse: \Link.folder)
     var links: [Link] = []
+    var timestamp: Date = Date.now
     
     init(title: String, links: [Link]) {
         self.title = title

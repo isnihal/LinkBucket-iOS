@@ -12,7 +12,7 @@ import SwiftData
 class Link{
     var url: String = ""
     var folder: Folder?
-    var timestamp: Date = Date()
+    var timestamp: Date = Date.now
     
     init(url: String, folder: Folder) {
         self.url = url
