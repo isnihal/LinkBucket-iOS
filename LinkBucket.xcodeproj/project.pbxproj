@@ -17,6 +17,7 @@
 		A0CC12882B765FCF000F605F /* LinkPreviewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC12872B765FCF000F605F /* LinkPreviewRepresentable.swift */; };
 		A0D3C0AE2B7C82C400FF8E6D /* FoldersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C0AD2B7C82C400FF8E6D /* FoldersScreen.swift */; };
 		A0D3C0B02B7C838E00FF8E6D /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C0AF2B7C838E00FF8E6D /* FolderView.swift */; };
+		A0D3C0B42B7C875800FF8E6D /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C0B32B7C875800FF8E6D /* Folder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		A0CC12892B7665A7000F605F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A0D3C0AD2B7C82C400FF8E6D /* FoldersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersScreen.swift; sourceTree = "<group>"; };
 		A0D3C0AF2B7C838E00FF8E6D /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
+		A0D3C0B32B7C875800FF8E6D /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				A07F30D22B7B7620006FC9BF /* Link.swift */,
+				A0D3C0B32B7C875800FF8E6D /* Folder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				A0CC12852B765FAF000F605F /* RichLinkPreview.swift in Sources */,
 				A0D3C0AE2B7C82C400FF8E6D /* FoldersScreen.swift in Sources */,
 				A05FFB1A2B765B690094DAAF /* LinkBucketApp.swift in Sources */,
+				A0D3C0B42B7C875800FF8E6D /* Folder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
