@@ -24,6 +24,7 @@
 		A05FFB1D2B765B6B0094DAAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A05FFB202B765B6B0094DAAF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A07F30D22B7B7620006FC9BF /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		A07F30D42B7B9483006FC9BF /* LinkBucket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LinkBucket.entitlements; sourceTree = "<group>"; };
 		A0CC12822B765DA1000F605F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A0CC12842B765FAF000F605F /* RichLinkPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichLinkPreview.swift; sourceTree = "<group>"; };
 		A0CC12872B765FCF000F605F /* LinkPreviewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPreviewRepresentable.swift; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		A05FFB182B765B690094DAAF /* LinkBucket */ = {
 			isa = PBXGroup;
 			children = (
+				A07F30D42B7B9483006FC9BF /* LinkBucket.entitlements */,
 				A05FFB192B765B690094DAAF /* LinkBucketApp.swift */,
 				A07F30D12B7B75FE006FC9BF /* Models */,
 				A0CC12892B7665A7000F605F /* Info.plist */,
@@ -343,6 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LinkBucket/LinkBucket.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LinkBucket/Preview Content\"";
@@ -373,6 +376,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LinkBucket/LinkBucket.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LinkBucket/Preview Content\"";

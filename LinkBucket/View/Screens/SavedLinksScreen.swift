@@ -33,11 +33,9 @@ struct SavedLinksScreen: View {
             VStack{
                 List {
                     ForEach(urls, id: \.self) { element in
-                        if let url = element.url{
-                            RichLinkPreview(url: url)
-                                .listRowSeparator(.hidden)
-                                .listRowInsets(EdgeInsets())
-                        }
+                        RichLinkPreview(url: element.url)
+                            .listRowSeparator(.hidden)
+                            .listRowInsets(EdgeInsets())
                     }
                     .onDelete(perform: { indexSet in
                         for index in indexSet{
