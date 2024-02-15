@@ -11,6 +11,7 @@ struct AddBucketSheet: View {
     @Environment(\.modelContext) var context
     @Binding var showFolderCreationSheet: Bool
     @State var inputValue: String = ""
+    @FocusState var isTextFieldFocused: Bool
    
     
     private func createFolder(){
@@ -52,8 +53,12 @@ struct AddBucketSheet: View {
                 .foregroundStyle(.folder)
                 .padding(.bottom,4)
             TextField("Enter the bucket name",text: $inputValue)
+                .focused($isTextFieldFocused)
                 .multilineTextAlignment(.center)
             Spacer()
+        }
+        .onAppear{
+            isTextFieldFocused = true
         }
     }
 }
