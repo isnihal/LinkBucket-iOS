@@ -10,7 +10,7 @@ import SwiftData
 
 struct FoldersScreen: View {
     
-    @Query(sort: \Folder.timestamp) var folders: [Folder]
+    @Query(sort: \Folder.lowercasedTitle) var folders: [Folder]
     @State var showFolderCreationSheet = false
     
     var body: some View {
