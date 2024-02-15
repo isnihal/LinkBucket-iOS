@@ -12,17 +12,20 @@ import SwiftData
 class Folder{
     var bucketId = UUID()
     var title: String = ""
-    @Relationship(deleteRule: .cascade, inverse: \Link.folder)
-    var links: [Link] = []
+    var isDeletable: Bool = true
     var timestamp: Date = Date.now
     
-    init(title: String, links: [Link]) {
+    @Relationship(deleteRule: .cascade, inverse: \Link.folder)
+    var links: [Link] = []
+    
+    init(title: String, links: [Link], isDeletable: Bool = true) {
         self.title = title
         self.links = links
+        self.isDeletable = isDeletable
     }
 }
 
 extension Folder{
     static let mockFolder = Folder(title: "Mock Title", links: [])
-    static let savedLinks = Folder(title: "Saved Links", links: [])
+    static let savedLinks = Folder(title: "Saved Links", links: [], isDeletable: false)
 }

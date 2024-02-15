@@ -26,12 +26,14 @@ struct FolderView: View {
                     .foregroundStyle(.folder)
             }
             .contextMenu {
-                Button(role: .destructive){
+                if folder.isDeletable{
+                    Button(role: .destructive){
                         showDeleteAlert = true
                     } label: {
                         Label("Delete Bucket", systemImage: "trash")
                     }
                 }
+            }
             Text(folder.title)
                 .font(.title3)
         }
