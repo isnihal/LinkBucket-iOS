@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddBucketSheet: View {
     @Environment(\.modelContext) var context
     @Binding var showFolderCreationSheet: Bool
     @State var inputValue: String = ""
     @FocusState var isTextFieldFocused: Bool
-   
+    @State var showErrorAlert: Bool = false
+    @Query var folders: [Folder]
     
     private func createFolder(){
         let folder = Folder(title: inputValue, links: [])
@@ -36,10 +38,23 @@ struct AddBucketSheet: View {
                 Spacer()
                 Button(action: {
                     if !inputValue.isEmpty{
-                        createFolder()
+                        var uniqueBucketName = true
+                        for folder in folders {
+                            if folder.title == inputValue{
+                                uniqueBucketName = false
+                            }
+                        }
+                        if uniqueBucketName{
+                            createFolder()
+                        }
+                        else{
+                            //TODO: DUPLICATE FOLDER NAME
+                            showErrorAlert = true
+                        }
                     }
                     else{
-                        //TODO: Avoid creating empty folder names
+                        showErrorAlert = true
+                        //TODO: SET EMPTY ALERT
                     }
                 }, label: {
                    Text("Done")
