@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A03C2DD02B7D150D0007A7E3 /* AddBucketSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C2DCF2B7D150D0007A7E3 /* AddBucketSheet.swift */; };
+		A03C2DD02B7D150D0007A7E3 /* AddFolderSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C2DCF2B7D150D0007A7E3 /* AddFolderSheet.swift */; };
 		A05FFB1A2B765B690094DAAF /* LinkBucketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFB192B765B690094DAAF /* LinkBucketApp.swift */; };
 		A05FFB1C2B765B690094DAAF /* LinksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FFB1B2B765B690094DAAF /* LinksScreen.swift */; };
 		A05FFB1E2B765B6B0094DAAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05FFB1D2B765B6B0094DAAF /* Assets.xcassets */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A03C2DCF2B7D150D0007A7E3 /* AddBucketSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBucketSheet.swift; sourceTree = "<group>"; };
+		A03C2DCF2B7D150D0007A7E3 /* AddFolderSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderSheet.swift; sourceTree = "<group>"; };
 		A05FFB162B765B690094DAAF /* LinkBucket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkBucket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05FFB192B765B690094DAAF /* LinkBucketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkBucketApp.swift; sourceTree = "<group>"; };
 		A05FFB1B2B765B690094DAAF /* LinksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksScreen.swift; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		A03C2DCE2B7D14F30007A7E3 /* Sheets */ = {
 			isa = PBXGroup;
 			children = (
-				A03C2DCF2B7D150D0007A7E3 /* AddBucketSheet.swift */,
+				A03C2DCF2B7D150D0007A7E3 /* AddFolderSheet.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -250,7 +250,7 @@
 				A0D3C0AE2B7C82C400FF8E6D /* FoldersScreen.swift in Sources */,
 				A05FFB1A2B765B690094DAAF /* LinkBucketApp.swift in Sources */,
 				A0D3C0B42B7C875800FF8E6D /* Folder.swift in Sources */,
-				A03C2DD02B7D150D0007A7E3 /* AddBucketSheet.swift in Sources */,
+				A03C2DD02B7D150D0007A7E3 /* AddFolderSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

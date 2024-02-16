@@ -30,14 +30,14 @@ struct FolderView: View {
                     Button(role: .destructive){
                         showDeleteAlert = true
                     } label: {
-                        Label("Delete Bucket", systemImage: "trash")
+                        Label("Delete Folder", systemImage: "trash")
                     }
                 }
             }
             Text(folder.title)
                 .font(.title3)
         }
-        .alert("Delete Bucket", isPresented: $showDeleteAlert) {
+        .alert("Delete Folder", isPresented: $showDeleteAlert) {
             Button(role: .destructive, action: {
                 context.delete(folder)
             }, label: {
@@ -45,7 +45,7 @@ struct FolderView: View {
                     .bold()
             })
         } message: {
-            Text("Are you sure you want to delete this bucket? Deleting the bucket will also delete all the files inside it.")
+            Text("Are you sure you want to delete this folder? Deleting the folder will also delete all the files inside it.")
         }
 
     }

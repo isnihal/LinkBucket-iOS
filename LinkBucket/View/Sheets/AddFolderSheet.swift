@@ -1,5 +1,5 @@
 //
-//  AddBucketSheet.swift
+//  AddFolderSheet.swift
 //  LinkBucket
 //
 //  Created by Nihal Ismail on 2/14/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct AddBucketSheet: View {
+struct AddFolderSheet: View {
     @Environment(\.modelContext) var context
     @Binding var showFolderCreationSheet: Bool
     @State var inputValue: String = ""
@@ -33,19 +33,19 @@ struct AddBucketSheet: View {
                     Text("Cancel")
                 })
                 Spacer()
-                Text("Create Bucket")
+                Text("Create Folder")
                     .font(.title3)
                     .bold()
                 Spacer()
                 Button(action: {
                     if !inputValue.isEmpty{
-                        var uniqueBucketName = true
+                        var uniqueFolderName = true
                         for folder in folders {
                             if folder.title == inputValue{
-                                uniqueBucketName = false
+                                uniqueFolderName = false
                             }
                         }
-                        if uniqueBucketName{
+                        if uniqueFolderName{
                             createFolder()
                         }
                         else{
@@ -69,7 +69,7 @@ struct AddBucketSheet: View {
                 .frame(height: 240)
                 .foregroundStyle(.folder)
                 .padding(.bottom,4)
-            TextField("Enter the bucket name",text: $inputValue)
+            TextField("Enter the folder name",text: $inputValue)
                 .focused($isTextFieldFocused)
                 .multilineTextAlignment(.center)
             Spacer()
@@ -87,5 +87,5 @@ struct AddBucketSheet: View {
 }
 
 #Preview {
-    AddBucketSheet(showFolderCreationSheet: .constant(false))
+    AddFolderSheet(showFolderCreationSheet: .constant(false))
 }

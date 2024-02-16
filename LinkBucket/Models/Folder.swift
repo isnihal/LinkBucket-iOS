@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 class Folder{
-    var bucketId = UUID()
+    var folderId = UUID()
     var title: String = ""
     var isDeletable: Bool = true
     var timestamp: Date = Date.now
