@@ -15,6 +15,7 @@ struct AddBucketSheet: View {
     @FocusState var isTextFieldFocused: Bool
     @State var showErrorAlert: Bool = false
     @Query var folders: [Folder]
+    @State var alert: Alert?
     
     private func createFolder(){
         let folder = Folder(title: inputValue, links: [])
@@ -48,8 +49,9 @@ struct AddBucketSheet: View {
                             createFolder()
                         }
                         else{
-                            //TODO: DUPLICATE FOLDER NAME
+                            alert = Alert.duplicateName(folderName: inputValue)
                             showErrorAlert = true
+                            inputValue = ""
                         }
                     }
                     else{
@@ -75,6 +77,12 @@ struct AddBucketSheet: View {
         .onAppear{
             isTextFieldFocused = true
         }
+        .alert(alert?.title ?? "", isPresented: $showErrorAlert) {
+            
+        } message: {
+            Text(alert?.message ?? "")
+        }
+
     }
 }
 
