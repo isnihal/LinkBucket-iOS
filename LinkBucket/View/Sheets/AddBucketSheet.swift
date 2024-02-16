@@ -55,8 +55,8 @@ struct AddBucketSheet: View {
                         }
                     }
                     else{
+                        alert = Alert.emptyName
                         showErrorAlert = true
-                        //TODO: SET EMPTY ALERT
                     }
                 }, label: {
                    Text("Done")

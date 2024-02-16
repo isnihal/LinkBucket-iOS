@@ -16,4 +16,6 @@ extension Alert{
     static func duplicateName(folderName: String) -> Alert{
         return Alert(title: "Duplicate Folder", message: "The name \"\(folderName)\" is already taken. Please choose a different name.")
     }
+    
+    static let emptyName = Alert(title: "Empty Name", message: "Folder name cannot be empty. Please enter a valid name.")
 }
