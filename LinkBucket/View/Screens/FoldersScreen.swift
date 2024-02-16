@@ -40,9 +40,9 @@ struct FoldersScreen: View {
                 Spacer()
             }
             .padding()
-            .navigationTitle("Your Buckets")
+            .navigationTitle("Your Folders")
             .sheet(isPresented: $showFolderCreationSheet, content: {
-                AddBucketSheet(showFolderCreationSheet: $showFolderCreationSheet)
+                AddFolderSheet(showFolderCreationSheet: $showFolderCreationSheet)
                 .padding()
             })
         }
