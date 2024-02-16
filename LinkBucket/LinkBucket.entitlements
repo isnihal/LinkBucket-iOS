@@ -6,7 +6,7 @@
 	<string>development</string>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>
-		<string>iCloud.com.nihalismail.LinkBucket</string>
+		<string>iCloud.com.nihalismai.LinkBucket.folders</string>
 	</array>
 	<key>com.apple.developer.icloud-services</key>
 	<array>

@@ -8,23 +8,32 @@
 import SwiftUI
 import SwiftData
 
-struct SavedLinksScreen: View {
-    @State var inputValue: String
-    
-    @Query(sort: \Link.timestamp, order: .reverse) var urls: [Link]
-    
+struct LinksScreen: View {
+    @State var userInput: String = ""
     @Environment(\.modelContext) var context
-    
     @FocusState private var isFocused: Bool
+    @Query var urls: [Link]
+    
+    var selectedFolder: Folder
+    
+    init(selectedFolder: Folder){
+        self.selectedFolder = selectedFolder
+        let selectedBucketId = selectedFolder.bucketId
+        
+        let filter = #Predicate<Link> { $0.folder?.bucketId == selectedBucketId
+        }
+        
+        _urls = Query(filter: filter,sort: \Link.timestamp, order: .reverse)
+    }
     
     func saveLink(){
-        if let url = URL(string: inputValue), url.host != nil{
-            let link = Link(url: inputValue)
+        if let url = URL(string: userInput), url.host != nil{
+            let link = Link(url: userInput, folder: selectedFolder)
             context.insert(link)
         }else{
             //TODO: HANDLE INVALID URL
         }
-        inputValue = ""
+        userInput = ""
         isFocused = false
     }
     
@@ -46,7 +55,7 @@ struct SavedLinksScreen: View {
                 .listStyle(.plain)
                 .listRowSpacing(16)
                 HStack{
-                    TextField("Paste your link here", text: $inputValue)
+                    TextField("Paste your link here", text: $userInput)
                         .focused($isFocused)
                         .keyboardType(.URL)
                         .onSubmit{
@@ -54,7 +63,7 @@ struct SavedLinksScreen: View {
                         }
                     Spacer()
                     Button(action: {
-                       saveLink()
+                        saveLink()
                     }, label: {
                         Image(systemName: "arrow.up.circle.fill")
                             .imageScale(.large)
@@ -75,11 +84,11 @@ struct SavedLinksScreen: View {
             }
             .padding(.leading)
             .scrollDismissesKeyboard(.interactively)
-            .navigationTitle("Saved Links")
+            .navigationTitle(selectedFolder.title)
         }
     }
 }
 
 #Preview {
-    SavedLinksScreen(inputValue: "")
+    LinksScreen(selectedFolder: .mockFolder)
 }
