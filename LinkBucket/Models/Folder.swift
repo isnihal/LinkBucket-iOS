@@ -14,10 +14,10 @@ class Folder{
     var title: String = ""
     var isDeletable: Bool = true
     var timestamp: Date = Date.now
-    var lowercasedTitle: String
+    var lowercasedTitle: String = ""
     
     @Relationship(deleteRule: .cascade, inverse: \Link.folder)
-    var links: [Link] = []
+    var links: [Link]? = []
     
     init(title: String, links: [Link], isDeletable: Bool = true) {
         self.title = title
