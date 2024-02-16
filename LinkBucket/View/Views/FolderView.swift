@@ -36,6 +36,8 @@ struct FolderView: View {
             }
             Text(folder.title)
                 .font(.title3)
+                .multilineTextAlignment(.center)
+                .lineLimit(1)
         }
         .alert("Delete Bucket", isPresented: $showDeleteAlert) {
             Button(role: .destructive, action: {
