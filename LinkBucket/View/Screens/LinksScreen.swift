@@ -27,8 +27,10 @@ struct LinksScreen: View {
     }
     
     func saveLink(){
-        if let url = URL(string: userInput), url.host != nil{
-            let link = Link(url: userInput, folder: selectedFolder)
+        var urlString = userInput
+        if urlString.isValidUrl{
+            urlString = urlString.formattedUrl
+            let link = Link(url: urlString, folder: selectedFolder)
             context.insert(link)
         }else{
             //TODO: HANDLE INVALID URL
@@ -57,6 +59,7 @@ struct LinksScreen: View {
                 HStack{
                     TextField("Paste your link here", text: $userInput)
                         .focused($isFocused)
+                        .textInputAutocapitalization(.never)
                         .keyboardType(.URL)
                         .onSubmit{
                             saveLink()

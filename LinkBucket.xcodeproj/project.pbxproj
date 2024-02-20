@@ -20,6 +20,7 @@
 		A0D3C0AE2B7C82C400FF8E6D /* FoldersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C0AD2B7C82C400FF8E6D /* FoldersScreen.swift */; };
 		A0D3C0B02B7C838E00FF8E6D /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C0AF2B7C838E00FF8E6D /* FolderView.swift */; };
 		A0D3C0B42B7C875800FF8E6D /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C0B32B7C875800FF8E6D /* Folder.swift */; };
+		A0F97FBD2B84A3A700923863 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F97FBC2B84A3A700923863 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		A0D3C0AD2B7C82C400FF8E6D /* FoldersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersScreen.swift; sourceTree = "<group>"; };
 		A0D3C0AF2B7C838E00FF8E6D /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
 		A0D3C0B32B7C875800FF8E6D /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		A0F97FBC2B84A3A700923863 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			children = (
 				A0A18ECA2B7F5BF10051E142 /* Alerts */,
 				A0CC12812B765D95000F605F /* Managers */,
+				A0F97FBE2B84A3AF00923863 /* Extensions */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -168,6 +171,14 @@
 				A0CC12872B765FCF000F605F /* LinkPreviewRepresentable.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		A0F97FBE2B84A3AF00923863 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A0F97FBC2B84A3A700923863 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +258,7 @@
 				A07F30D32B7B7620006FC9BF /* Link.swift in Sources */,
 				A0A18ECE2B7F5C410051E142 /* Alert.swift in Sources */,
 				A0CC12852B765FAF000F605F /* RichLinkPreview.swift in Sources */,
+				A0F97FBD2B84A3A700923863 /* Extensions.swift in Sources */,
 				A0D3C0AE2B7C82C400FF8E6D /* FoldersScreen.swift in Sources */,
 				A05FFB1A2B765B690094DAAF /* LinkBucketApp.swift in Sources */,
 				A0D3C0B42B7C875800FF8E6D /* Folder.swift in Sources */,
