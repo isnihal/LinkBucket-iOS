@@ -14,13 +14,23 @@ struct LinksScreen: View {
     @FocusState private var isFocused: Bool
     @Query var urls: [Link]
     
-    var selectedFolder: Folder
+    var selectedFolder: Folder?
     
     init(selectedFolder: Folder){
         self.selectedFolder = selectedFolder
         let selectedFolderId = selectedFolder.folderId
         
-        let filter = #Predicate<Link> { $0.folder?.folderId == selectedFolderId
+        var filter: Predicate<Link>
+                                
+        if selectedFolder.lowercasedTitle == "saved links"{
+            self.selectedFolder = nil
+            filter = #Predicate<Link>{
+                $0.folder == nil
+            }
+        }
+        else{
+            filter = #Predicate<Link> { $0.folder?.folderId == selectedFolderId
+            }
         }
         
         _urls = Query(filter: filter,sort: \Link.timestamp, order: .reverse)
@@ -87,7 +97,7 @@ struct LinksScreen: View {
             }
             .padding(.leading)
             .scrollDismissesKeyboard(.interactively)
-            .navigationTitle(selectedFolder.title)
+            .navigationTitle(selectedFolder?.title ?? "Saved Links")
         }
     }
 }
