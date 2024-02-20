@@ -27,7 +27,7 @@ struct LinksScreen: View {
     }
     
     func saveLink(){
-        var urlString = userInput.lowercased()
+        var urlString = userInput
         if urlString.isValidUrl{
             urlString = urlString.formattedUrl
             let link = Link(url: urlString, folder: selectedFolder)
