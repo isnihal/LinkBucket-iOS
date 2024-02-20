@@ -18,7 +18,6 @@ struct FoldersScreen: View {
             VStack{
                 ScrollView{
                     LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())], content: {
-                        FolderView(folder: .savedLinks)
                         ForEach(folders) { folder in
                             FolderView(folder: folder)
                         }
