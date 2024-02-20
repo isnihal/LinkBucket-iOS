@@ -57,6 +57,7 @@ struct LinksScreen: View {
                 HStack{
                     TextField("Paste your link here", text: $userInput)
                         .focused($isFocused)
+                        .textInputAutocapitalization(.never)
                         .keyboardType(.URL)
                         .onSubmit{
                             saveLink()
