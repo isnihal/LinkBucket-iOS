@@ -27,8 +27,10 @@ struct LinksScreen: View {
     }
     
     func saveLink(){
-        if let url = URL(string: userInput), url.host != nil{
-            let link = Link(url: userInput, folder: selectedFolder)
+        var urlString = userInput.lowercased()
+        if urlString.isValidUrl{
+            urlString = urlString.formattedUrl
+            let link = Link(url: urlString, folder: selectedFolder)
             context.insert(link)
         }else{
             //TODO: HANDLE INVALID URL
