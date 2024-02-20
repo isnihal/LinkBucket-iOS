@@ -11,9 +11,9 @@ extension String{
     var isValidUrl: Bool{
         // This pattern matches a string that starts with the form https://www. or http://www. and the"website" part (alphanumeric characters, hyphens, or underscores),a dot, and then the "extension" part (alphanumeric characters, at least 2 characters long).
         let pattern = "^(https?:\\/\\/)?(www\\.)?([a-zA-Z0-9_-]+)\\.([a-zA-Z]{2,}).*"
-            let regex = try! NSRegularExpression(pattern: pattern)
-            let matches = regex.matches(in: self, range: NSRange(location: 0, length: self.utf16.count))
-            return !matches.isEmpty
+        let regex = try! NSRegularExpression(pattern: pattern)
+        let matches = regex.matches(in: self, range: NSRange(location: 0, length: self.utf16.count))
+        return !matches.isEmpty
     }
     
     var isValidSimpleURL: Bool {
@@ -42,5 +42,23 @@ extension String{
         else{
             return self
         }
+    }
+    
+    var normalizedURL: String{
+        let url = URL(string: self)
+        if let url{
+            let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+            if var components{
+                // Lowercase the scheme and host
+                components.scheme = components.scheme?.lowercased()
+                components.host = components.host?.lowercased()
+                
+                // Reconstruct the URL from components
+                if let normalizedURL = components.url?.absoluteString{
+                    return normalizedURL
+                }
+            }
+        }
+        return self
     }
 }

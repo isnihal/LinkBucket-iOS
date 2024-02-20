@@ -16,7 +16,7 @@ struct NetworkManager{
     private let cache = NSCache<NSString,LPLinkMetadata>()
     
     func fetchMetadata(url: String, completed: @escaping(LPLinkMetadata?) -> Void){
-        let cacheKey = NSString(string: url)
+        let cacheKey = NSString(string: url.normalizedURL)
         let metadata = cache.object(forKey: cacheKey)
         if metadata != nil{
             completed(metadata)
