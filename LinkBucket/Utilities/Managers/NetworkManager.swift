@@ -22,7 +22,7 @@ struct NetworkManager{
             completed(.success(metadata))
         }
         else{
-            guard let url = URL(string: url) else {return completed(.failure(.invalidURL))} //TODO: THROW ERROR
+            guard let url = URL(string: url) else {return completed(.failure(.invalidURL))}
             let metadataProvider = LPMetadataProvider()
             metadataProvider.startFetchingMetadata(for: url) { metadata, error in
                 if error != nil{

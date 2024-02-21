@@ -12,19 +12,21 @@ struct CompletedErrorView: View {
     let url: String
     
     var body: some View {
-        Button(action: {
-            if let url = URL(string: url){
-                UIApplication.shared.open(url)
-            }
-        }, label: {
+        HStack{
             Text(url)
-                .padding([.bottom,.leading,.top])
+                .padding(.leading)
                 .foregroundStyle(.foreground)
             Image(systemName: "safari")
                 .foregroundStyle(.foreground)
             Spacer()
-        })
-        .background(.bubbleGray)
+        }
+        .onTapGesture {
+            if let url = URL(string: url){
+                UIApplication.shared.open(url)
+            }
+        }
+        .padding()
+        .background(.bubbleGray.opacity(0.25))
         .clipShape(.capsule)
     }
 }

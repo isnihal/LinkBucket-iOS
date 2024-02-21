@@ -69,6 +69,7 @@ struct LinksScreen: View {
                 }
                 .listStyle(.plain)
                 .listRowSpacing(16)
+                .padding(.trailing)
                 HStack{
                     TextField("Paste your link here", text: $userInput)
                         .focused($isFocused)
