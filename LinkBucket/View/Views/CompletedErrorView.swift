@@ -19,7 +19,7 @@ struct CompletedErrorView: View {
             Spacer()
             Image(systemName: "safari")
                 .imageScale(.large)
-                .foregroundStyle(.black.opacity(0.5))
+                .foregroundStyle(.foreground.opacity(0.5))
                 .padding(6)
                 .background()
             Spacer()
