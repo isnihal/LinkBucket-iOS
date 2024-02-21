@@ -14,7 +14,8 @@ struct RichLinkPreview: View {
     @StateObject private var metadataProvider = MetadataProvider()
     
     var body: some View {
-        if metadataProvider.error == nil{
+        if metadataProvider.error == nil &&
+            metadataProvider.metadata == nil{
             ProgressView()
                 .task {
                     metadataProvider.fetchMetadata(of: url)
