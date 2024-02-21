@@ -21,17 +21,20 @@ struct LinksScreen: View {
         let selectedFolderId = selectedFolder.folderId
         
         var filter: Predicate<Link>
+        
+        filter = #Predicate<Link> { $0.folder?.folderId == selectedFolderId
+        }
                                 
-        if selectedFolder.lowercasedTitle == "saved links"{
-            self.selectedFolder = nil
-            filter = #Predicate<Link>{
-                $0.folder == nil
-            }
-        }
-        else{
-            filter = #Predicate<Link> { $0.folder?.folderId == selectedFolderId
-            }
-        }
+//        if selectedFolder.lowercasedTitle == "saved links"{
+//            self.selectedFolder = nil
+//            filter = #Predicate<Link>{
+//                $0.folder == nil
+//            }
+//        }
+//        else{
+//            filter = #Predicate<Link> { $0.folder?.folderId == selectedFolderId
+//            }
+//        }
         
         _urls = Query(filter: filter,sort: \Link.timestamp, order: .reverse)
     }
