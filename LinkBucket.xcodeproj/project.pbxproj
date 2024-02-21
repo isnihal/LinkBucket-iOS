@@ -14,6 +14,7 @@
 		A05FFB212B765B6B0094DAAF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05FFB202B765B6B0094DAAF /* Preview Assets.xcassets */; };
 		A07F30D32B7B7620006FC9BF /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07F30D22B7B7620006FC9BF /* Link.swift */; };
 		A0A18ECE2B7F5C410051E142 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A18ECD2B7F5C410051E142 /* Alert.swift */; };
+		A0C9D5802B86050E00F41F2B /* CompletedErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9D57F2B86050E00F41F2B /* CompletedErrorView.swift */; };
 		A0CC12832B765DA1000F605F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC12822B765DA1000F605F /* NetworkManager.swift */; };
 		A0CC12852B765FAF000F605F /* RichLinkPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC12842B765FAF000F605F /* RichLinkPreview.swift */; };
 		A0CC12882B765FCF000F605F /* LinkPreviewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC12872B765FCF000F605F /* LinkPreviewRepresentable.swift */; };
@@ -33,6 +34,7 @@
 		A07F30D22B7B7620006FC9BF /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		A07F30D42B7B9483006FC9BF /* LinkBucket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LinkBucket.entitlements; sourceTree = "<group>"; };
 		A0A18ECD2B7F5C410051E142 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		A0C9D57F2B86050E00F41F2B /* CompletedErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedErrorView.swift; sourceTree = "<group>"; };
 		A0CC12822B765DA1000F605F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A0CC12842B765FAF000F605F /* RichLinkPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichLinkPreview.swift; sourceTree = "<group>"; };
 		A0CC12872B765FCF000F605F /* LinkPreviewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPreviewRepresentable.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				A0CC12842B765FAF000F605F /* RichLinkPreview.swift */,
 				A0D3C0AF2B7C838E00FF8E6D /* FolderView.swift */,
+				A0C9D57F2B86050E00F41F2B /* CompletedErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				A07F30D32B7B7620006FC9BF /* Link.swift in Sources */,
 				A0A18ECE2B7F5C410051E142 /* Alert.swift in Sources */,
 				A0CC12852B765FAF000F605F /* RichLinkPreview.swift in Sources */,
+				A0C9D5802B86050E00F41F2B /* CompletedErrorView.swift in Sources */,
 				A0F97FBD2B84A3A700923863 /* Extensions.swift in Sources */,
 				A0D3C0AE2B7C82C400FF8E6D /* FoldersScreen.swift in Sources */,
 				A05FFB1A2B765B690094DAAF /* LinkBucketApp.swift in Sources */,
