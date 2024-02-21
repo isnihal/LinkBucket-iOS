@@ -15,26 +15,26 @@ struct NetworkManager{
     
     private let cache = NSCache<NSString,LPLinkMetadata>()
     
-    func fetchMetadata(url: String, completed: @escaping(LPLinkMetadata?) -> Void){
+    func fetchMetadata(url: String, completed: @escaping(Result<LPLinkMetadata,LinkBucketError>) -> Void){
         let cacheKey = NSString(string: url.normalizedURL)
         let metadata = cache.object(forKey: cacheKey)
-        if metadata != nil{
-            completed(metadata)
+        if let metadata{
+            completed(.success(metadata))
         }
         else{
-            guard let url = URL(string: url) else {return} //TODO: THROW ERROR
+            guard let url = URL(string: url) else {return completed(.failure(.invalidURL))}
             let metadataProvider = LPMetadataProvider()
             metadataProvider.startFetchingMetadata(for: url) { metadata, error in
                 if error != nil{
-                    //TODO: THROW ERROR
+                    completed(.failure(.others(message: error?.localizedDescription ?? "")))
                 }
                 else{
                     if let metadata{
                         cache.setObject(metadata, forKey: cacheKey)
-                        completed(metadata)
+                        completed(.success(metadata))
                     }
                     else{
-                        completed(nil)
+                        completed(.failure(.invalidMetadata))
                     }
                 }
             }
