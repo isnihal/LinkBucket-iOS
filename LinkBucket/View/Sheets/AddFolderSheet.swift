@@ -71,6 +71,7 @@ struct AddFolderSheet: View {
                 .padding(.bottom,4)
             TextField("Enter the folder name",text: $inputValue)
                 .focused($isTextFieldFocused)
+                .textInputAutocapitalization(.never)
                 .multilineTextAlignment(.center)
                 .onSubmit {
                     createFolder()
