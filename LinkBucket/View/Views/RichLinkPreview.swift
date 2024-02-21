@@ -14,7 +14,7 @@ struct RichLinkPreview: View {
     @StateObject private var metadataProvider = MetadataProvider()
     
     var body: some View {
-        if metadataProvider.metadata == nil{
+        if metadataProvider.error == nil{
             ProgressView()
                 .task {
                     metadataProvider.fetchMetadata(of: url)
@@ -26,19 +26,25 @@ struct RichLinkPreview: View {
                     .fixedSize()
             }
             else{
-                //TODO: ERROR VIEW
+                CompletedErrorView(url: url)
             }
         }
     }
 }
 
 private class MetadataProvider: ObservableObject{
+    @Published var error: LinkBucketError?
     @Published var metadata: LPLinkMetadata?
     
     func fetchMetadata(of url: String){
-        NetworkManager.shared.fetchMetadata(url: url) { metadata in
+        NetworkManager.shared.fetchMetadata(url: url) { result in
             DispatchQueue.main.async {
-                self.metadata = metadata
+                switch result {
+                case .success(let metadata):
+                    self.metadata = metadata
+                case .failure(let error):
+                    self.error = error
+                }
             }
         }
     }
