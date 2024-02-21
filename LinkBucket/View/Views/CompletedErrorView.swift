@@ -13,7 +13,7 @@ struct CompletedErrorView: View {
     
     var body: some View {
         HStack{
-            Text(url)
+            Text(url.normalizedURL)
                 .padding(.leading)
                 .foregroundStyle(.foreground)
             Spacer()
@@ -26,7 +26,7 @@ struct CompletedErrorView: View {
                 .frame(width: 4)
         }
         .onTapGesture {
-            if let url = URL(string: url){
+            if let url = URL(string: url.normalizedURL){
                 UIApplication.shared.open(url)
             }
         }
