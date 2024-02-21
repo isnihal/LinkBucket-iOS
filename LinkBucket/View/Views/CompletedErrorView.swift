@@ -16,16 +16,22 @@ struct CompletedErrorView: View {
             Text(url)
                 .padding(.leading)
                 .foregroundStyle(.foreground)
-            Image(systemName: "safari")
-                .foregroundStyle(.foreground)
             Spacer()
+            Image(systemName: "safari")
+                .imageScale(.large)
+                .foregroundStyle(.black.opacity(0.5))
+                .padding(6)
+                .background()
+            Spacer()
+                .frame(width: 4)
         }
         .onTapGesture {
             if let url = URL(string: url){
                 UIApplication.shared.open(url)
             }
         }
-        .padding()
+        .padding(.trailing)
+        .padding(.vertical,8)
         .background(.bubbleGray.opacity(0.25))
         .clipShape(.capsule)
     }
